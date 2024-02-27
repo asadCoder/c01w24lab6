@@ -1,13 +1,10 @@
 services:
-  backend:
-    build:
-      context: .
-      dockerfile: Dockerfile_backend
-      target: backend
+  frontend:
+    image: asadcoder/quirknotes_frontend:latest
     ports:
-      - "4000:4000"
-    environment:
-      - ENV=Docker
+      - "3000:3000"
+  backend:
+    image: asadcoder/quirknotes_backend:latest
     depends_on:
       - mongodb
   mongodb:
