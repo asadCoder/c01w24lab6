@@ -2,7 +2,9 @@ services:
   frontend:
     image: asadcoder/quirknotes_frontend:latest
     ports:
-      - "3000:3000"
+      - "3000:80"
+    depends_on:
+      - backend
   backend:
     image: asadcoder/quirknotes_backend:latest
     depends_on:
